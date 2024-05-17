@@ -1,56 +1,64 @@
+
+EXPERIMENT - 2:
+
 SIMULATION AND IMPLEMENTATION OF  COMBINATIONAL LOGIC CIRCUITS
 
-AIM: 
+AIM:
+
  To simulate and synthesis ENCODER, DECODER, MULTIPLEXER, DEMULTIPLEXER, MAGNITUDE COMPARATOR using Xilinx ISE.
 
 APPARATUS REQUIRED:
+
 Xilinx 14.7
 Spartan6 FPGA
 
+
+PROCEDURE:
+
+
+STEP:1  Start  the Xilinx navigator, Select and Name the New project.
+
+
+STEP:2  Select the device family, device, package and speed.
+
+
+STEP:3  Select new source in the New Project and select Verilog Module as the Source type.
+
+
+STEP:4  Type the File Name and Click Next and then finish button. Type the code and save it.
+
+
+STEP:5  Select the Behavioral Simulation in the Source Window and click the check syntax.
+
+
+STEP:6  Click the simulation to simulate the program and  give the inputs and verify the outputs as per the truth table.   
+
+
+STEP:7  Select the Implementation in the Sources Window and select the required file in the Processes Window.
+
+
+STEP:8  Select Check Syntax from the Synthesize  XST Process. Double Click in the  FloorplanArea/IO/Logic-Post Synthesis process in the User Constraints process group. UCF(User constraint File) is obtained. 
+
+
+STEP:9  In the Design Object List Window, enter the pin location for each pin in the Loc column Select save from the File menu.
+
+
+STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here.
+
+
+STEP:11  On the board, by giving required input, the LEDs starts to glow light, indicating the output.
+
+
 **LOGIC DIAGRAM**
+
 
 ENCODER
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/3cd1f95e-7531-4cad-9154-fdd397ac439e)
 
 
-DECODER
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/45a5e6cf-bbe0-4fd5-ac84-e5ad4477483b)
-
-
-MULTIPLEXER
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/427f75b2-8e67-44b9-ac45-a66651787436)
-
-
-DEMULTIPLEXER
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/1c45a7fc-08ac-4f76-87f2-c084e7150557)
-
-
-MAGNITUDE COMPARATOR
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/b2fe7a05-6bf7-4dcb-8f5d-28abbf7ea8c2)
-
-
-  
-PROCEDURE:
-STEP:1  Start  the Xilinx navigator, Select and Name the New project.
-STEP:2  Select the device family, device, package and speed.       
-STEP:3  Select new source in the New Project and select Verilog Module as the Source type.                       
-STEP:4  Type the File Name and Click Next and then finish button. Type the code and save it.
-STEP:5  Select the Behavioral Simulation in the Source Window and click the check syntax.                       
-STEP:6  Click the simulation to simulate the program and  give the inputs and verify the outputs as per the truth table.               
-STEP:7  Select the Implementation in the Sources Window and select the required file in the Processes Window.
-STEP:8  Select Check Syntax from the Synthesize  XST Process. Double Click in the  FloorplanArea/IO/Logic-Post Synthesis process in the User Constraints process group. UCF(User constraint File) is obtained. 
-STEP:9  In the Design Object List Window, enter the pin location for each pin in the Loc column Select save from the File menu.
-STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here.
-STEP:11  On the board, by giving required input, the LEDs starts to glow light, indicating the output.
-
 VERILOG CODE
 
-   Encoder:
 ```
 module encoder(
   input [7:0] D,
@@ -62,7 +70,17 @@ module encoder(
 endmodule
 ```
 
-   Decoder:
+OUTPUT WAVEFORM:
+
+
+ ![Screenshot (21)](https://github.com/porkodivasu/VLSI-LAB-EXP-2/assets/160757120/28e614f0-1989-48d7-97b6-ac75309861dd)
+
+DECODER
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/45a5e6cf-bbe0-4fd5-ac84-e5ad4477483b)
+
+ VERILOG CODE:
+ 
 ```
    module decoder(
   input [2:0] D,
@@ -85,7 +103,17 @@ endmodule
 endmodule
 ```
 
-Multiplexer:
+OUTPUT WAVEFORM:
+
+![Screenshot (28)](https://github.com/porkodivasu/VLSI-LAB-EXP-2/assets/160757120/72263be6-0dd4-4b71-a4fc-710b13aaf3c6)
+
+
+MULTIPLEXER:
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/427f75b2-8e67-44b9-ac45-a66651787436)
+
+VERILOG CODE:
+
 ```
 module multi(i,s,y);
 input[7:0]i;
@@ -105,8 +133,18 @@ case({s[2],s[1],s[0]})
 endcase end
 endmodule
 ```
+OUTPUT WAVEFORM:
 
-Demultiplexer:
+
+![Screenshot (86)](https://github.com/porkodivasu/VLSI-LAB-EXP-2/assets/160757120/f514f0f2-a320-4a40-b9ac-dc217ceec89a)
+
+
+DEMULTIPLEXER
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/1c45a7fc-08ac-4f76-87f2-c084e7150557)
+
+VERILOG CODE:
+
 ```
 module demultiplexer(d1,d2,d3,d4,d5,d6,d7,d8,i,s0,s1,s2);
 input i,s0,s1,s2;
@@ -126,7 +164,18 @@ and g11(d8,s0,s1,s2,i);
 endmodule
 ```
 
-Magnitude comparator:
+OUTPUT WAVEFORM:
+
+
+![Screenshot (27)](https://github.com/porkodivasu/VLSI-LAB-EXP-2/assets/160757120/bf937f95-6e99-4885-a392-f494594c5d86)
+
+
+MAGNITUDE COMPARATOR
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/b2fe7a05-6bf7-4dcb-8f5d-28abbf7ea8c2)
+
+VERILOG CODE:
+
 ```
 module comparator(
   input [3:0] A, B,
@@ -141,27 +190,8 @@ module comparator(
 endmodule
 ```
 
-OUTPUT WAVEFORM
+OUTPUT WAVEFORM:
 
-
- ENCODER:
-
- ![Screenshot (21)](https://github.com/porkodivasu/VLSI-LAB-EXP-2/assets/160757120/28e614f0-1989-48d7-97b6-ac75309861dd)
-
-DECODER:
-
-![Screenshot (29)](https://github.com/porkodivasu/VLSI-LAB-EXP-2/assets/160757120/f5f002dc-98d9-4f1e-a03f-d87ecb450418)
-
-MULTIPLEXER:
-
-![Screenshot (86)](https://github.com/porkodivasu/VLSI-LAB-EXP-2/assets/160757120/f514f0f2-a320-4a40-b9ac-dc217ceec89a)
-
-DEMULTIPLEXER:
-
-![Screenshot (27)](https://github.com/porkodivasu/VLSI-LAB-EXP-2/assets/160757120/bf937f95-6e99-4885-a392-f494594c5d86)
-
-
-MAGNITUDE COMPARATOR:
 
 ![Screenshot (31)](https://github.com/porkodivasu/VLSI-LAB-EXP-2/assets/160757120/e1e78e69-c092-49e3-93e9-21de65fd7d6d)
 
